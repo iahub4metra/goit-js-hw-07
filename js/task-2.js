@@ -29,10 +29,9 @@ const list = document.querySelector('.gallery')
 const newSrc = [];
 const newAlt = [];
 const addImages = images
-    .map((image) => `<li class="item"><img src="${image.url}" alt="${image.alt}" width="360" height="300"/></li>`)
+    .map((image) => `<li class="item2"><img src="${image.url}" alt="${image.alt}" width="360" height="300"/></li>`)
     .join("");
-list.style.listStyleType = "none";
-list.style.boxSizing = "border-box"
+
 list.style.display ="flex"
 list.style.flexWrap = "wrap";
 list.style.gap = "48px 24px"
