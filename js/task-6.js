@@ -7,25 +7,20 @@ btnCreate.addEventListener("click", function () {
             createBoxes(numberInput.value);
         }
         numberInput.value = '';
-    
 })
 let baseSize = 30;
 function createBoxes(amount) {
     boxes.innerHTML = "";
     let size = baseSize;
+    const arr = [];
     for (let i = 0; i < amount; i++) {
-        
-        const box = document.createElement('div');
-        boxes.appendChild(box);
-        box.className = 'box';
-        box.style.width = `${size}px`;
-        box.style.height = `${size}px`;
-        box.style.backgroundColor = getRandomHexColor();  
+        const boxColor = getRandomHexColor();
+        arr[i] = `<div style="background-color: ${boxColor}; width: ${size}px; height:${size}px;"></div>` 
         size += 10;
     }
+    const result = arr.join('')
+    boxes.innerHTML = result;
 }
-
-
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
